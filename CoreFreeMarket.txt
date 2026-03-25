@@ -1,0 +1,12 @@
+package Ucore;
+
+public class CoreFreeMarket {
+    private CorePaymentFreeMarket.Payment payment;
+
+    public CoreFreeMarket(CorePaymentFreeMarket.Payment payment) {
+        this.payment = payment;
+    }
+    public void checkout(double value){
+        payment.pay(value);
+    }
+}

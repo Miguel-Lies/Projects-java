@@ -1,0 +1,28 @@
+package Ucore;
+
+public class CorePaymentFreeMarket {
+    public interface Payment{
+        void pay(double value);
+    }
+    public static class Pix implements Payment{
+        public void pay(double value){
+            System.out.println("You paid with the pix.");
+        }
+
+    }
+    public static class CreditCard implements Payment{
+        public void pay(double value){
+            System.out.println("You paid with the credit card.");
+        }
+    }
+    public static class DebitCard implements Payment{
+        public void pay(double value){
+            System.out.println("You paid with the debit card.");
+        }
+    }
+    public static class Ticket implements Payment{
+        public void pay(double value){
+            System.out.println("You paid with the ticket.");
+        }
+    }
+}
