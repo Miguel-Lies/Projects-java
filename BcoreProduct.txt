@@ -1,6 +1,6 @@
 package Vcore;
 
-public class CoreProduct {
+public class BcoreProduct {
     private String name;
     private double price;
     CoreInterface.Payment payment;

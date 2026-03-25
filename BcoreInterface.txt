@@ -1,6 +1,6 @@
 package Vcore;
 
-public class CoreInterface {
+public class BcoreInterface {
     public interface Payment {
         boolean pay(double value, CoreProduct product);
     }

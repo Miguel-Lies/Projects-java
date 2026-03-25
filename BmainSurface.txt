@@ -3,7 +3,7 @@ import Vcore.CoreInterface;
 import Vcore.CoreProduct;
 import java.util.Scanner;
 
-public class MainSurface {
+public class BmainSurface {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         CoreProduct product = new CoreProduct("Lakshimi",240);
