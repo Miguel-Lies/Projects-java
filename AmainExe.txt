@@ -4,7 +4,7 @@ import Ucore.CoreProducts;
 import java.util.Scanner;
 
 
-public class MainExe {
+public class AmainExe {
     public static void main(String[] Args) {
         Scanner sc = new Scanner(System.in);
         CoreProducts p1 = new CoreProducts("Teclado Redragon Lakshimi", "Preto", 220);

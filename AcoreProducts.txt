@@ -1,6 +1,6 @@
 package Ucore;
 
-public class CoreProducts {
+public class AcoreProducts {
     private String name;
     private String color;
     private double price;

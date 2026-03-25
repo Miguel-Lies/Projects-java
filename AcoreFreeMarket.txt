@@ -1,6 +1,6 @@
 package Ucore;
 
-public class CoreFreeMarket {
+public class AcoreFreeMarket {
     private CorePaymentFreeMarket.Payment payment;
 
     public CoreFreeMarket(CorePaymentFreeMarket.Payment payment) {

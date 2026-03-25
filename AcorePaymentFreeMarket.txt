@@ -1,6 +1,6 @@
 package Ucore;
 
-public class CorePaymentFreeMarket {
+public class AcorePaymentFreeMarket {
     public interface Payment{
         void pay(double value);
     }
