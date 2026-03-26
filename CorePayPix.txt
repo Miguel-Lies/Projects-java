@@ -1,0 +1,11 @@
+package ACcore;
+
+public class CorePayPix extends CoreBasePayment {
+
+    @Override
+    protected boolean ProcessSpecificallyLogic(double value){
+        System.out.println("PIx key generated with the value of: " + value);
+        System.out.println("Awaiting validation...");
+        return true;
+    }
+}

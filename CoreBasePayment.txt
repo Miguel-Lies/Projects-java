@@ -1,0 +1,14 @@
+package ACcore;
+    public abstract class CoreBasePayment implements CoreInterPayment.Payment {
+
+        @Override
+        public boolean pay(double value, CoreProductsOfShop product) {
+            if (value >= product.getPrice()) {
+                return ProcessSpecificallyLogic(value);
+            } else {
+                System.out.println("this amount is insufficient.");
+                return false;
+            }
+        }
+        protected abstract boolean ProcessSpecificallyLogic(double value);
+    }

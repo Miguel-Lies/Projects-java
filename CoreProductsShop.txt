@@ -1,17 +1,17 @@
-package Ucore;
+package ACcore;
 
-public class AcoreProducts {
+public class CoreProductsOfShop {
     private String name;
     private String color;
     private double price;
 
-    public CoreProducts(String name, String color, double price) {
+    public CoreProductsOfShop(String name, String color, double price) {
         this.name = name;
         this.color = color;
         this.price = price;
     }
 
-    public String Products(){
+    public String ShowInformationOfProducts(){
         return "\n"+"Name: " + this.name + "\n"+
                 "Color: " + this.color +"\n"+
                 "Price: " + this.price + "\n"+

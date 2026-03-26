@@ -1,0 +1,10 @@
+package ACcore;
+
+public class CorePayTicket extends CoreBasePayment{
+        @Override
+        protected boolean ProcessSpecificallyLogic(double value){
+            System.out.println("Amount to be paid: " + value);
+            System.out.println("Awaiting validation...");
+            return true;
+        }
+}

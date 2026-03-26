@@ -1,0 +1,64 @@
+package ACmain;
+
+import ACcore.*;
+import java.util.Scanner;
+
+public class MainAppAplication {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean shopping = true;
+
+        while (shopping) {
+            CoreProductsOfShop product = new CoreProductsOfShop("Mechanical Keyboard", "black", 250);
+
+            System.out.println("--- New Transaction ---");
+            System.out.println("Product: " + product.getName() + " [" + product.getColor() + "]");
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("-----------------------");
+
+            System.out.println("Enter amount to pay (or 0 to cancel):");
+            double amount = scanner.nextDouble();
+            scanner.nextLine();
+
+            if (amount <= 0) {
+                System.out.println("Transaction cancelled.");
+            } else {
+
+                CoreInterPayment.Payment payment = null;
+
+                while (payment == null) {
+                    System.out.println("Select method (pix, debit, credit, ticket, bitcoin) or 'back':");
+                    String option = scanner.nextLine().toLowerCase();
+
+                    if (option.equals("back")) break;
+
+                    switch (option) {
+                        case "pix":     payment = new CorePayPix(); break;
+                        case "debit":   payment = new CorePayDebitCard(); break;
+                        case "credit":  payment = new CorePayCreditCard(); break;
+                        case "ticket":  payment = new CorePayTicket(); break;
+                        case "bitcoin": payment = new CorePayBitcoin(); break;
+                        default:
+                            System.out.println("Invalid method! Please try again.");
+                    }
+                }
+                if (payment != null) {
+                    boolean isSuccess = payment.pay(amount, product);
+                    if (isSuccess) {
+                        System.out.println("STATUS: Payment Approved.");
+                    } else {
+                        System.out.println("STATUS: Payment Rejected.");
+                    }
+                }
+            }
+
+            System.out.println("Do you want to process another sale? (y/n): ");
+            String continueShopping = scanner.nextLine().toLowerCase();
+            if (continueShopping.equals("n")) {
+                shopping = false;
+                System.out.println("Closing system.");
+            }
+        }
+        scanner.close();
+    }
+}

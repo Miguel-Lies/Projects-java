@@ -1,0 +1,7 @@
+package ACcore;
+
+public class CoreInterPayment {
+   public interface Payment {
+        boolean pay(double value, CoreProductsOfShop product);
+    }
+}
